@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Message Board</title>
+</head>
+<body>
+    <h1>📝 Message Board</h1>
+    <form method="POST">
+        <input type="text" name="name" placeholder="Your Name" required><br><br>
+        <textarea name="text" placeholder="Your Message" rows="4" cols="50" required></textarea><br><br>
+        <button type="submit">Post</button>
+    </form>
+    <hr>
+    {% for msg in messages %}
+        <p><strong>{{ msg.name }}</strong> ({{ msg.timestamp.strftime('%Y-%m-%d %H:%M') }}):<br>
+        {{ msg.text }}</p>
+        <hr>
+    {% endfor %}
+</body>
+</html>
